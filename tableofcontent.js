@@ -30,16 +30,7 @@ $(function () {
         "</ul>" +
         "</nav>";
     $('.content-section').prepend(contentSection);
-    $('.rte-quote:not(:has(.share-quotes))')
-        .each(function () {
-            var quoteText = $(this).text().trim();
-            $(this).append($(this).parents('.main-scroll-content').last().find('.social-links').eq(0).clone()
-                .addClass('share-quotes'));
 
-            $(this).find("a").attr("addthis:title", quoteText);
-            $(this).find("a").attr("addthis:quote", quoteText);
-            $(this).find("a").attr("addthis:href", document.URL);
-        });
     $(document).on("scroll", onScroll);
 
     $('.content-section li a').click(function (e) {
